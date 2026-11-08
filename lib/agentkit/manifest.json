@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "product": "pipmcp",
+  "credential": "PIPMCP_API_KEY",
+  "skills": [
+    {
+      "name": "pipmcp-openapi-to-mcp",
+      "description": "Import a reviewed openapi API definition into private PipMCP and connect its tools to AI agents."
+    }
+  ],
+  "files": {
+    "skills/pipmcp-openapi-to-mcp/SKILL.md": "26c4fee3b85681c735de544b970c72ad70b1cfde538016cd43467c8b3c23ba04"
+  }
+}

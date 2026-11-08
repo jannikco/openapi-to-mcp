@@ -1,46 +1,49 @@
 {
   "schemaVersion": 1,
-  "status": "ready",
-  "verification": "mock-only",
-  "releaseEligible": true,
-  "maintainer": "jannikco",
-  "license": "MIT",
-  "sourceRevision": "16410c037e2a52321f2842aca9ce01a0e1a8536a21dc869253e0c69677ecaa81",
-  "evidence": [
-    "Local compiler output and actual MCP tools/call contract tests"
-  ],
-  "provenance": [
-    "https://github.com/jannikco/openapi-to-mcp/blob/main/lib/compiler/index.mjs"
-  ],
   "id": "openapi-to-mcp",
   "kind": "import-example",
   "product": "pipmcp",
   "title": "OpenAPI to MCP import starter",
-  "description": "Compile openapi definitions into executable local MCP tools without a PipMCP account.",
+  "description": "Import openapi APIs into private PipMCP with one API key, reviewed uploads and agent instructions.",
+  "status": "ready",
+  "verification": "mock-only",
+  "releaseEligible": true,
   "operationIds": [],
-  "importFormat": "openapi",
+  "maintainer": "jannikco",
+  "license": "MIT",
   "attributionSlug": "github-openapi-to-mcp",
+  "sourceRevision": "d8e27b6ecee4cce1b6cee57577255c8dc30089b83a19f5f50b00efa315976786",
   "qualityVersion": 2,
   "artifactType": "compiler",
+  "evidence": [
+    "Gateway HTTP transport fixtures",
+    "Generated stdio wrapper discovery/call fixtures"
+  ],
+  "provenance": [
+    "https://github.com/jannikco/openapi-to-mcp/blob/main/lib/compiler/index.mjs"
+  ],
   "utility": {
-    "problem": "Compile openapi definitions into executable local MCP tools without a PipMCP account.",
-    "output": "Executable local MCP connector definition"
+    "problem": "Import a reviewed openapi API definition into private PipMCP",
+    "output": "A private integration import receipt; publication and connection remain explicit"
   },
+  "executionAuthority": "pipmcp-gateway",
+  "version": "1.0.0",
+  "agentReady": true,
   "capabilityEvidence": {
     "local": {
       "level": "Tested",
       "operations": [
         {
-          "name": "openapi-to-mcp",
+          "name": "gateway_transport",
           "level": "Tested",
+          "method": "contract-fixture",
           "evidenceRefs": [
-            "Standalone functional API/compiler contract tests"
-          ],
-          "method": "contract-fixture"
+            "Generated gateway/stdio fixtures"
+          ]
         }
       ],
       "evidenceRefs": [
-        "Standalone functional API/compiler contract tests"
+        "Generated gateway/stdio fixtures"
       ],
       "mode": "local"
     },
@@ -51,38 +54,5 @@
       "mode": "managed"
     }
   },
-  "connector": {
-    "id": "inventory-fixture-api",
-    "name": "Inventory fixture API",
-    "version": "1.0.0",
-    "baseUrl": "https://example.com/inventory",
-    "auth": {
-      "type": "none"
-    },
-    "tools": [
-      {
-        "name": "listInventoryItems",
-        "description": "List inventory items",
-        "method": "GET",
-        "path": "/items",
-        "readOnly": true,
-        "inputSchema": {
-          "type": "object",
-          "properties": {},
-          "required": [],
-          "additionalProperties": false
-        },
-        "bindings": {
-          "path": [],
-          "query": {},
-          "body": {}
-        },
-        "sampleArguments": {}
-      }
-    ],
-    "workflow": "Call the selected operations from your own API definition using your own credentials.",
-    "provenance": [
-      "User-supplied API definition"
-    ]
-  }
+  "importFormat": "openapi"
 }
