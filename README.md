@@ -1,5 +1,41 @@
 # OpenAPI to MCP import starter
 
+## Turn your API into tools your AI can use
+
+Preview a small API import, then review and publish its tools in your private workspace.
+
+### Try the task with synthetic data
+
+No product key is needed for this demo. Requires Node.js 22+.
+
+```sh
+npm ci --ignore-scripts
+npm run demo
+# Optional: save a private report to a new file.
+npm run demo -- --output ./synthetic-report.json
+```
+
+Output: an OpenAPI import preview with one synthetic read operation. No upload, publication or connection occurs.
+
+The synthetic records use normalized review fields. Review and map your actual provider schema before applying the same selection to live data.
+
+### Use your authorized account
+
+[Activate this task](https://pipmcp.com/github/start?integration=openapi-to-mcp&flow=private-api-import-preview&utm_source=github&utm_campaign=github-openapi-to-mcp&utm_content=task-demo), then set **PIPMCP_API_KEY** in your process environment. Provider credentials stay in PipMCP. Configure the provider connection and explicitly select integration/connection IDs when your account has several.
+
+```sh
+npm run preflight
+```
+
+Preflight checks access/discovery only; it does not count as a completed provider task. For an explicitly reviewed read, use the returned live schema and the exact operation/tool, arguments and stable idempotency key:
+
+```sh
+npm run verify:read -- --tool '<actual discovered read-only tool>' --arguments '<reviewed argument JSON>' --idempotency-key '<stable request key>' --confirm-read-only
+```
+
+First import your reviewed API with explicit confirmation, publish its selected tools and configure a connection. Set PIPMCP_INTEGRATION_ID to that published API; drafts have no callable tools. Importing needs integrations:read and integrations:write on the same PipMCP key. Discovery/calls require connectors:read and connectors:call on the PipMCP key. The verification command performs only the selected authorized read; it refuses writes and never selects a customer operation automatically. Only a completed receipt establishes a live read. Missing access, pending jobs and uncertain outcomes remain explicit blockers. Reports contain receipt digests rather than customer payloads. No prices, trials or account allowances are changed.
+
+
 **Turn your openapi API definition into hosted MCP tools. Preview locally, then explicitly import it with your PipMCP API key.**
 
 [Activate with PipMCP](https://pipmcp.com/github/start?integration=openapi-to-mcp&utm_source=github&utm_campaign=github-openapi-to-mcp) · [Integration directory](https://jannikco.github.io/pipmcp-connectors/guides/openapi-to-mcp/)

@@ -12,7 +12,7 @@
   "maintainer": "jannikco",
   "license": "MIT",
   "attributionSlug": "github-openapi-to-mcp",
-  "sourceRevision": "d8e27b6ecee4cce1b6cee57577255c8dc30089b83a19f5f50b00efa315976786",
+  "sourceRevision": "5856f81651fe5a9ec9e88c97870d5e8ba8f9e0a98616aec9b64c52475106189a",
   "qualityVersion": 2,
   "artifactType": "compiler",
   "evidence": [
@@ -27,7 +27,7 @@
     "output": "A private integration import receipt; publication and connection remain explicit"
   },
   "executionAuthority": "pipmcp-gateway",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "agentReady": true,
   "capabilityEvidence": {
     "local": {

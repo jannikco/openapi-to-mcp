@@ -1,0 +1,38 @@
+{
+  "id": "private-api-import-preview",
+  "repositoryId": "openapi-to-mcp",
+  "product": "pipmcp",
+  "connectorId": "custom-api",
+  "title": "Turn your API into tools your AI can use",
+  "promise": "Preview a small API import, then review and publish its tools in your private workspace.",
+  "sourceRevision": "5856f81651fe5a9ec9e88c97870d5e8ba8f9e0a98616aec9b64c52475106189a",
+  "credential": "PIPMCP_API_KEY",
+  "transport": "private-import-preview",
+  "sourceRefs": [
+    "https://pipmcp.com/docs/import-openapi"
+  ],
+  "readTask": {
+    "intent": "Preview a small API import, then review and publish its tools in your private workspace.",
+    "requiredCapability": "Read-only authorized account data; discover actual names and schemas first"
+  },
+  "synthetic": {
+    "strategy": "import",
+    "field": null,
+    "value": null,
+    "records": [],
+    "input": {
+      "limit": 10
+    },
+    "normalization": "Invented normalized review fields demonstrate task logic; live provider schemas and field mappings must be reviewed separately.",
+    "expectedReviewCount": 0,
+    "asOf": "2026-11-08T00:00:00Z"
+  },
+  "livePolicy": {
+    "default": "preflight-only",
+    "explicitReadSelectionRequired": true,
+    "providerWritesAllowed": false,
+    "sandboxWritesRequireSeparateApproval": true
+  },
+  "baseSourceRevision": "d8e27b6ecee4cce1b6cee57577255c8dc30089b83a19f5f50b00efa315976786",
+  "releaseVersion": "1.1.0"
+}
